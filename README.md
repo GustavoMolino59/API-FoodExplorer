@@ -16,8 +16,11 @@
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
    <a href="https://github.com/GustavoMolino59/Web-foodExplorer/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/starsGustavoMolino59/API-FoodExplorer?style=social">
-  </a>
- 
+   </a>
+   
+ <h4 align="center">
+	🚧   Concluído 🚀 🚧
+</h4>
 </p>
 Tabela de conteúdos
 =================
@@ -32,9 +35,7 @@ Tabela de conteúdos
    * [Autor](#-autor)
 <!--te-->
 
-<h4 align="center">
-	🚧   Concluído 🚀 🚧
-</h4>
+
 
 ### Features
 - [x] Cadastro de usuário
