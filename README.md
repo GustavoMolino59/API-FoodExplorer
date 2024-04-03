@@ -24,7 +24,7 @@ Finalizado
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/tgmarinho/nlw1>
+$ git clone <https://github.com/GustavoMolino59/API-FoodExplorer>
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd nlw1
