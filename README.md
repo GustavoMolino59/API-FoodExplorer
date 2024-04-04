@@ -1,11 +1,42 @@
-# Nome do Projeto
-Backend foodExplorer
+<h1 align="center">
+      <a href="#" alt="Food explorer API"> food Explorer API</a>
+</h1>
+<h3 align="center">
+    Backedn de site de compra venda de refeições online feito por uma empresa fictícia chamda Food explorer
+</h3>
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/GustavoMolino59/API-FoodExplorer?color=%2304D361">
 
-## Descrição do projeto
-Backend utilizado no projeto foodExplorer utilizando nodeJs para controlar as requisições feitas pelo frontEnd
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/GustavoMolino59/API-FoodExplorer">
+  
+  <a href="https://github.com/GustavoMolino59/API-FoodExplorer/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/GustavoMolino59/API-FoodExplorer">
+  </a>
+    
+   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+   <a href="https://github.com/GustavoMolino59/Web-foodExplorer/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/starsGustavoMolino59/API-FoodExplorer?style=social">
+   </a>
+   
+ <h4 align="center">
+	🚧   Concluído 🚀 🚧
+</h4>
 
-## Status do projeto
-Finalizado
+Tabela de conteúdos
+=================
+<!--ts-->
+
+* [Sobre o projeto](#-sobre-o-projeto)
+   * [Funcionalidades](#Features)
+   * [Como executar o projeto](#Como-executar-o-projeto)
+     * [Pré-requisitos](#pré-requisitos)
+     * [Rodando a aplicação web (Servidor)](#user-content---rodando-o-back-end-servidor)
+   * [Tecnologias](#-tecnologias)
+   * [Organização](#-organização)
+   * [Autor](#-autor)
+<!--te-->
+
+
 
 ### Features
 - [x] Cadastro de usuário
@@ -43,16 +74,25 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 ```
+<p align="center">
+  <a href="" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
+</p>
 
-### 🛠 Tecnologias
-- [Node.js](https://nodejs.org/en/)
-- [Express] (https://expressjs.com/pt-br/)
-- [Cors] (https://developer.mozilla.org/pt-BR/docs/Web/HTTP/CORS)
-- [Multer] (https://www.npmjs.com/package/multer)
-- [SQLite] (https://www.sqlite.org/)
-- [Knex] (https://knexjs.org/)
-- [JWT] (https://jwt.io/)
+## 🛠 Tecnologias
 
+As seguintes ferramentas foram usadas na construção do projeto:
+
+#### [](https://github.com/tgmarinho/Ecoleta#server-nodejs--typescript)**Server**  ([NodeJS](https://nodejs.org/en/) 
+
+-   **[Express](https://expressjs.com/)**
+-   **[CORS](https://expressjs.com/en/resources/middleware/cors.html)**
+-   **[KnexJS](http://knexjs.org/)**
+-   **[SQLite](https://github.com/mapbox/node-sqlite3)**
+-   **[ts-node](https://github.com/TypeStrong/ts-node)**
+-   **[dotENV](https://github.com/motdotla/dotenv)**
+-   **[Multer](https://github.com/expressjs/multer)**
+-   **[JWT] (https://jwt.io/)**
+> Veja o arquivo  [package.json](https://github.com/GustavoMolino59/API-FoodExplorer/blob/main/package.json)
 ### Organização
 O sistema é organizado de forma componentizada em Controllers, cada um controlando suas respectivas funções. Os Controllers são:
 
@@ -79,9 +119,6 @@ Temos dois middlewares:
 
 - EnsureAuthenticated: Verifica que o token está contido nos cookies da resposta e garante a autenticação do usuário com a validação do token JWT. Em seguida, passa o user_id para a request para ser usado na função
 - verifyUserAuthorization: Realiza a validação da autenticação de um usuário para realizar certas funções, que podem ser realizadas apenas por um ADMIN
-
-### variaveis de ambiente
-as variaveis de ambiente definidas foram nossa palavra secreta para o token de autorização, nossa porta de utilização e nossa configuração do cors para permitir injeção dos cookies apenas do site permitido
 
 ### Autor
 ---
