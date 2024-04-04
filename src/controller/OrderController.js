@@ -31,7 +31,6 @@ class OrderController {
         
         else{
                 const newValue = meal.price * quantity;
-                console.log(newValue)
             const[order_id] = await knex('orders').insert({
                 user_id,
                 total_amount:newValue,
@@ -56,7 +55,6 @@ class OrderController {
     async index(request, response){
         const user_id = request.user.id;
         const{role} = request.user;
-        console.log(role)
         if(role == 'customer'){
             const order = await knex('orders').where({user_id}).innerJoin('orders_details', 'orders.id', 'orders_details.order_id')
             .select([
@@ -89,7 +87,6 @@ class OrderController {
                             "orders.status",
                             "orders.order_date"
                         ]).orderBy('orders.order_date', 'desc').groupBy('orders.id');;
-            console.log(order)
             const order_details = await knex('orders_details')
             
             const orderWithDetails = order.map(order => {
@@ -102,7 +99,6 @@ class OrderController {
                 }
                 
             })
-            console.log(orderWithDetails)
             //buscar as refeições aqui e devolver todos os detalhes de pagamento
             return response.status(200).json(orderWithDetails);
         }

@@ -9,7 +9,7 @@ class FavoriteController{
         const{meal_id} = request.body;
         const user_id = request.user.id;
 
-        console.log('chegou aqui')
+        
         await knex('favorites').insert({user_id, meal_id})
 
         return response.json()

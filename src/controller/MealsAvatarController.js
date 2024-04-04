@@ -13,7 +13,7 @@ class MealsAvatarController {
         const diskStorage = new DiskStorage();
 
         const meal = await knex('meals').where({id: mealId}).first()
-        console.log('chegou aqui avatar')
+        
         if(!user_id){
             new AppError("Apenas usuário autenticados podem alterar a foto de perfil")
         }
@@ -25,7 +25,7 @@ class MealsAvatarController {
         meal.avatar = filename;
 
         await knex('meals').update(meal).where({id: mealId}) //chama o knex e da um update com o user que é um json com todos os dados inclusive o de avatar atualizado
-        console.log('chegou aqui')
+        
         return response.status(201).json(meal)
     }
 }

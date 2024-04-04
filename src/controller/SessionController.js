@@ -11,7 +11,8 @@ class SessionController {
 
     async create(request, response){
         const{email, password} = request.body;
-        
+        console.log('entrou no Session controller')
+
         //verificar se o usuario existe
         const user = await knex('users').where({email}).first()
         if(!user){

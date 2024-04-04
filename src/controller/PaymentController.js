@@ -37,11 +37,11 @@ class PaymentController{
     async executePayment(request, response){
         const{creditCard, expireDate, CVV} = request.body
         const user_id = request.user.id
-        console.log('entrou')
+   
         await new Promise(resolve => setTimeout(resolve, 5000)); // Espera de 5 segundos
-        console.log('saiu')
+        
         await knex('orders').update({status:'pending'}).where({user_id}).andWhere({status:'open'})
-        console.log('passou')
+        
         return response.status(200).json()
     }   
 }
