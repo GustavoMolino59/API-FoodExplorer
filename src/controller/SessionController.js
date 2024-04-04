@@ -27,7 +27,7 @@ class SessionController {
             throw new AppError("Email e/ou senha inválidos")
         }
 
-        //gerando o token
+        //gerando o token com o usuário dentro
         const{secret, expiresIn} = authConfig.jwt;
         const token = sign({role: user.role}, secret, {
             subject: String(user.id),
@@ -46,8 +46,12 @@ class SessionController {
     }
 
     async logout(request, response) {
-        response.clearCookie("token");
-    
+        response.clearCookie("token", {
+            httpOnly: true,
+            sameSite: "none",
+            secure: true,
+            maxAge: 15 * 60 * 1000
+          })
         return response.status(204).json();
       }
     
