@@ -41,7 +41,7 @@ class SessionController {
           })
         console.log(response.cookie)
         
-        console.log("Resposta da session Controller" + response )
+        console.log(response)
         delete user.password
         return response.status(201).json({user})
     }
