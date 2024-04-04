@@ -5,7 +5,7 @@ const authConfig = require('../configs/auth')
 
 function ensureAuthenticated(request, response, next){
     const authHeader = request.headers; // pegando o header da request que diz respeito a autorização
-    console.log('entrou no ensureAuthenticade')
+    
 
     
     if(!authHeader.cookie){

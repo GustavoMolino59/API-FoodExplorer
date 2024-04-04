@@ -11,7 +11,7 @@ class SessionController {
 
     async create(request, response){
         const{email, password} = request.body;
-        console.log('entrou no Session controller')
+        
 
         //verificar se o usuario existe
         const user = await knex('users').where({email}).first()
@@ -40,7 +40,8 @@ class SessionController {
             maxAge: 15 * 60 * 1000
           })
         console.log(response.cookie)
-          
+        
+        console.log("Resposta da session Controller" + response )
         delete user.password
         return response.status(201).json({user})
     }
