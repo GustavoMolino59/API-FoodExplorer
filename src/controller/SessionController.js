@@ -15,7 +15,7 @@ class SessionController {
 
         //verificar se o usuario existe
         const user = await knex('users').where({email}).first()
-        console.log(user)
+        
 
         if(!user){
             throw new AppError('Email e/ou senha inválidos')
@@ -29,7 +29,6 @@ class SessionController {
 
         //gerando o token
         const{secret, expiresIn} = authConfig.jwt;
-        console.log(secret, expiresIn)
         const token = sign({role: user.role}, secret, {
             subject: String(user.id),
             expiresIn
