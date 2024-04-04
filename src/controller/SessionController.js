@@ -27,19 +27,19 @@ class SessionController {
 
         //gerando o token
         const{secret, expiresIn} = authConfig.jwt;
-
+        console.log(secret, expiresIn)
         const token = sign({role: user.role}, secret, {
             subject: String(user.id),
             expiresIn
         })
-
+        console.log(token)
         response.cookie("token", token, {
             httpOnly: true,
             sameSite: "none",
             secure: true,
             maxAge: 15 * 60 * 1000
           })
-        
+        console.log(response.cookie)
           
         delete user.password
         return response.status(201).json({user})
