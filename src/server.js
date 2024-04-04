@@ -16,7 +16,7 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use(cors({
-  origin: [process.env.REQUISITION_URL, "http://127.0.0.1:5173"],
+  origin: [process.env.REQUISITION_URL],
   credentials: true
 }));
 
