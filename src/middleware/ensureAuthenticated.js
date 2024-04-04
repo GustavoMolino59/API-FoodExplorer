@@ -22,6 +22,7 @@ function ensureAuthenticated(request, response, next){
             id:Number(user_id),
             role
         }
+        console.log(request.user)
         return next();
     }catch{
         

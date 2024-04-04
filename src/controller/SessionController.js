@@ -15,6 +15,8 @@ class SessionController {
 
         //verificar se o usuario existe
         const user = await knex('users').where({email}).first()
+        console.log(user)
+
         if(!user){
             throw new AppError('Email e/ou senha inválidos')
         }
@@ -32,16 +34,14 @@ class SessionController {
             subject: String(user.id),
             expiresIn
         })
-        console.log(token)
         response.cookie("token", token, {
             httpOnly: true,
             sameSite: "none",
             secure: true,
             maxAge: 15 * 60 * 1000
           })
-        console.log(response.cookie)
         
-        console.log(response)
+        
         delete user.password
         return response.status(201).json({user})
     }
@@ -49,7 +49,7 @@ class SessionController {
     async logout(request, response) {
         response.clearCookie("token");
     
-        response.status(204).json();
+        return response.status(204).json();
       }
     
 }
